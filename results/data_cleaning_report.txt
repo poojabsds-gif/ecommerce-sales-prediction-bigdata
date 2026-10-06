@@ -1,0 +1,41 @@
+
+E-COMMERCE SALES PREDICTION
+DATA CLEANING REPORT
+==============================
+
+Original records:
+1067371
+
+Duplicate rows removed:
+34335
+
+Cancelled invoice rows removed:
+19104
+
+Invalid quantity rows removed:
+3393
+
+Invalid price rows removed:
+2626
+
+Missing description rows removed:
+0
+
+Invalid date rows removed:
+0
+
+Final records:
+1007913
+
+Final columns:
+InvoiceNo, StockCode, Description, Quantity, InvoiceDate, UnitPrice, CustomerID, Country, Revenue, Year, Month, Day, DayOfWeek
+
+Date range:
+2009-12-01 07:45:00 to 2011-12-09 12:50:00
+
+Total revenue:
+20476260.45
+
+Missing Customer IDs were retained because
+CustomerID is not mandatory for the primary
+sales and demand prediction objective.

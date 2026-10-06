@@ -1,0 +1,60 @@
+Spark/PySpark Analytics - E-Commerce Sales Prediction
+
+Spark version:
+3.1.1
+
+HDFS input:
+hdfs://namenode:8020/data/ecommerce/raw/cleaned_online_retail.csv
+
+Dataset records processed:
+1,007,913
+
+Daily sales aggregation:
+Sales were aggregated by transaction date using Quantity and Revenue.
+
+Feature engineering:
+- Lag_1_Day
+- Lag_7_Days
+- Lag_14_Days
+- Rolling_7_Day_Avg
+- DayOfWeek_Num
+- Month_Num
+- Year_Num
+
+Prediction target:
+Daily_Revenue
+
+Chronological dataset:
+Training records: 472
+Testing records: 118
+
+Training period:
+2009-12-16 to 2011-07-24
+
+Testing period:
+2011-07-25 to 2011-12-09
+
+Models evaluated:
+
+Linear Regression - Baseline
+RMSE: 23093.76
+MAE: 15123.67
+R2: 0.1651
+
+Linear Regression - Improved
+RMSE: 22048.02
+MAE: 14570.02
+R2: 0.2390
+
+Random Forest Regression
+RMSE: 21114.17
+MAE: 12645.95
+R2: 0.3021
+
+Best model:
+Random Forest Regression
+
+Interpretation:
+Random Forest produced the lowest RMSE and MAE and the highest R2 among the evaluated models.
+
+R2 should not be interpreted as prediction accuracy. The Random Forest model explains approximately 30.2% of the variation in unseen test-period daily revenue.

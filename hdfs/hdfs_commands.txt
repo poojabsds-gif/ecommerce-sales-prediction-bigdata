@@ -1,0 +1,25 @@
+HDFS Data Ingestion - E-Commerce Sales Prediction
+
+Dataset:
+cleaned_online_retail.csv
+
+HDFS path:
+/data/ecommerce/raw/cleaned_online_retail.csv
+
+Commands executed:
+
+docker cp jupyter:/home/jovyan/work/data/cleaned_online_retail.csv C:\bigdata-docker\cleaned_online_retail.csv
+
+docker cp C:\bigdata-docker\cleaned_online_retail.csv namenode:/tmp/cleaned_online_retail.csv
+
+docker exec -it namenode hdfs dfs -mkdir -p /data/ecommerce/raw
+
+docker exec -it namenode hdfs dfs -put /tmp/cleaned_online_retail.csv /data/ecommerce/raw/
+
+docker exec -it namenode hdfs dfs -ls /data/ecommerce/raw
+
+Verified HDFS file:
+/data/ecommerce/raw/cleaned_online_retail.csv
+
+Purpose:
+HDFS provides distributed storage for the cleaned e-commerce dataset before Hive and Spark processing.
